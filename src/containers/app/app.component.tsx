@@ -10,7 +10,7 @@ import {
   Redirect,
 } from 'react-router';
 
-import { HeaderComponent } from '../../components/header/header.component';
+import { HeaderV2Component } from '../../components/header-v2/header-v2.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 
 import './app.scss';
@@ -94,7 +94,7 @@ class App extends React.PureComponent<RouteComponentProps<any>> {
           className="bi-app__wrapper g-flex__item g-flex-column g-scroll-y"
           ref={(ref: HTMLDivElement) => (this.scrollBody = ref)}
         >
-          <HeaderComponent />
+          <HeaderV2Component />
 
           <div className="bi-app__body g-flex-column__item g-flex-column">
             <Suspense

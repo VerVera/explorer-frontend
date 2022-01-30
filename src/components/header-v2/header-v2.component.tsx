@@ -1,0 +1,48 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { SettingsActions } from '../../actions/settings.actions';
+
+import { HeaderStatsV2Component } from '../header-stats-v2/header-stats-v2.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { SearchComponent } from '../search/search.component';
+
+import './header-v2.scss';
+
+import { LogoIcon } from '../common/icons/common.icons';
+import { Link } from 'react-router-dom';
+
+class Header extends React.Component<SettingsActions> {
+  constructor(props: SettingsActions) {
+    super(props);
+  }
+
+  render(): JSX.Element {
+    return (
+      <div className="bi-header-v2 g-flex g-flex-column">
+        <NavbarComponent />
+
+        <div className="bi-header-v2__mobile g-flex g-space-between g-flex-column__item-fixed">
+          <Link className="bi-navbar-v2__logo" to={'/'}>
+            <LogoIcon className="bi-sidebar__logo-icon" />
+          </Link>
+        </div>
+
+        <div className="bi-header-v2__stats g-flex">
+          <HeaderStatsV2Component />
+        </div>
+
+        <SearchComponent />
+      </div>
+    );
+  }
+}
+
+function mapDispatchToProps(dispatch: any): any {
+  return bindActionCreators(SettingsActions, dispatch);
+}
+
+export const HeaderV2Component = connect(null, mapDispatchToProps, null, {
+  pure: false,
+})(Header);

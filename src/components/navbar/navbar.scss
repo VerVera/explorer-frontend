@@ -1,0 +1,96 @@
+@import '../../assets/styles/base/variables';
+
+// #Sidebar
+//-------------------------------------
+$sidebar-bg-color: #121212;
+$sidebar-logo-color: #ffffff;
+$sidebar-side-logo-color: #828795;
+$sidebar-copyright-color: #828795;
+$sidebar-font: $theme-main-font;
+$sidebar-btn-toggle-border-color: #ffffff;
+$sidebar-btn-toggle-icon-color: #ffffff;
+
+.bi-navbar {
+  position: relative;
+  background-color: $sidebar-bg-color;
+  font-family: $sidebar-font;
+  transition: width 350ms linear;
+  z-index: 3;
+
+  // [ Components ]
+  //---------------------------------
+  &__body {
+    position: relative;
+
+    align-items: center;
+  }
+
+  &__logo {
+    line-height: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  &__footer {
+    padding: ($grid-offset-step * 3) ($grid-offset-step * 7);
+
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  &__footer-line {
+    width: 100%;
+
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: $grid-offset-step * 3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__side-logo {
+    position: absolute;
+    z-index: 0;
+    bottom: -260px;
+    left: -32px;
+    width: 160px;
+    height: 26px;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+    transform: rotate(270deg);
+
+    fill: $sidebar-side-logo-color;
+  }
+
+  .bi-environment-switcher {
+    margin-right: $grid-offset-step * 2;
+  }
+}
+
+@media screen and (max-width: $mobile-device-width) {
+  .bi-navbar {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    transition: left 250ms ease-in-out;
+
+    &--open {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-height: 850px) {
+  .bi-navbar__side-logo {
+    visibility: hidden;
+  }
+}
+
+.bi-app--iframe {
+  .bi-navbar {
+    display: none;
+  }
+}

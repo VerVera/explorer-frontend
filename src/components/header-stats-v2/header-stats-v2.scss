@@ -1,0 +1,15 @@
+@import '../../assets/styles/base/variables';
+
+// #HEADER STATS V2
+//-------------------------------------
+
+.bi-header-stats-v2 {
+  width: 100%;
+  margin-bottom: $grid-offset-step * 5;
+
+  justify-content: space-between;
+
+  @media screen and (max-width: $mobile-device-width) {
+    flex-wrap: wrap;
+  }
+}
