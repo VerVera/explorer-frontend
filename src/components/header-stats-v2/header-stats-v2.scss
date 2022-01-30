@@ -5,11 +5,16 @@
 
 .bi-header-stats-v2 {
   width: 100%;
-  margin-bottom: $grid-offset-step * 5;
+  max-width: 780px;
+  margin: 0 auto;
 
   justify-content: space-between;
 
   @media screen and (max-width: $mobile-device-width) {
     flex-wrap: wrap;
+    margin: auto;
+    max-width: 100%;
+
+    justify-content: flex-start;
   }
 }

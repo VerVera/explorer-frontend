@@ -1,19 +1,18 @@
 @import '../../assets/styles/base/variables';
 
-// #Sidebar
+// #Navbar
 //-------------------------------------
-$sidebar-bg-color: #121212;
-$sidebar-logo-color: #ffffff;
+$navbar-logo-color: #ffffff;
+$navbar-btn-toggle-border-color: #ffffff;
+$navbar-btn-toggle-icon-color: #ffffff;
 $sidebar-side-logo-color: #828795;
 $sidebar-copyright-color: #828795;
-$sidebar-font: $theme-main-font;
-$sidebar-btn-toggle-border-color: #ffffff;
-$sidebar-btn-toggle-icon-color: #ffffff;
+$navbar-font: $theme-main-font;
 
 .bi-navbar {
   position: relative;
-  background-color: $sidebar-bg-color;
-  font-family: $sidebar-font;
+  font-family: $navbar-font;
+  padding: ($grid-offset-step * 4) ($grid-offset-step * 4) ($grid-offset-step * 12) ($grid-offset-step * 4);
   transition: width 350ms linear;
   z-index: 3;
 
@@ -26,66 +25,66 @@ $sidebar-btn-toggle-icon-color: #ffffff;
   }
 
   &__logo {
+
+  }
+
+  &__logo {
+    color: $navbar-logo-color;
+    font-family: $theme-main-font;
+    font-size: 14px;
+    white-space: nowrap;
     line-height: 0;
     transition: opacity 250ms ease-in-out;
   }
 
-  &__footer {
-    padding: ($grid-offset-step * 3) ($grid-offset-step * 7);
+  &__logo-icon {
+    width: 140px;
+    height: 56px;
 
-    flex-wrap: wrap;
-    margin-top: auto;
-  }
+    fill: $navbar-logo-color;
 
-  &__footer-line {
-    width: 100%;
-
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: $grid-offset-step * 3;
-
-    &:last-child {
-      margin-bottom: 0;
+    path {
+      fill: $navbar-logo-color;
     }
   }
 
-  &__side-logo {
-    position: absolute;
-    z-index: 0;
-    bottom: -260px;
-    left: -32px;
-    width: 160px;
-    height: 26px;
-    opacity: 0;
-    transition: opacity 250ms ease-in-out;
-    transform: rotate(270deg);
+  &__toggle {
+    display: none;
+    z-index: 1;
+    padding: $grid-offset-step * 2;
 
-    fill: $sidebar-side-logo-color;
+    align-items: center;
+    justify-content: center;
   }
 
-  .bi-environment-switcher {
-    margin-right: $grid-offset-step * 2;
+  &__toggle-icon {
+    fill: $navbar-btn-toggle-icon-color;
   }
 }
 
 @media screen and (max-width: $mobile-device-width) {
   .bi-navbar {
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    bottom: 0;
-    left: -100%;
-    transition: left 250ms ease-in-out;
+    padding: ($grid-offset-step * 2) ($grid-offset-step * 4) ($grid-offset-step * 8) ($grid-offset-step * 2);
 
-    &--open {
-      left: 0;
+    &__toggle {
+      display: block;
     }
-  }
-}
 
-@media screen and (max-height: 850px) {
-  .bi-navbar__side-logo {
-    visibility: hidden;
+    &__toggle-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__logo-icon {
+      width: 106px;
+      height: 44px;
+    }
+
+    &__switchers {
+      .bi-environment-switcher {
+        display: none;
+      }
+    }
   }
 }
 

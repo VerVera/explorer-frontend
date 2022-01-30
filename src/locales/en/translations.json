@@ -97,8 +97,8 @@
       "hashRate": "Hash Rate",
       "marketCap": "Market Cap",
       "supply": "Circulating Supply",
-      "transactionAverage": "Transactions per Day",
-      "version": "Protocol Version"
+      "transactionAverage": "Tx per Day",
+      "version": "Protocol"
     },
     "charts": {
       "view": "View Chart"

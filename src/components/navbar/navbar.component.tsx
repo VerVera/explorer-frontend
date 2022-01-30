@@ -122,18 +122,18 @@ class Navbar extends React.Component<INavbarProps, NavbarState> {
       <div className="bi-navbar g-flex__item-fixed">
         <div className="bi-navbar__body g-flex g-space-between g-flex-column__item-fixed">
           <button
-            className="bi-header-v2__toggle bi-btn bi-btn--flat"
+            className="bi-navbar__toggle bi-btn bi-btn--flat"
             onClick={this.showSidebar}
           >
-            <BurgerIcon className="bi-header-v2__toggle-icon" />
+            <BurgerIcon className="bi-navbar__toggle-icon" />
           </button>
 
-          <Link className="bi-navbar-v2__logo" to={'/'}>
-            <LogoIcon className="bi-sidebar__logo-icon" />
+          <Link className="bi-navbar__logo" to={'/'}>
+            <LogoIcon className="bi-navbar__logo-icon" />
           </Link>
           <NavbarMenuComponent items={NAVBAR_MENU_ITEMS} />
 
-          <div className="bi-navbar__right">
+          <div className="bi-navbar__switchers g-flex">
             <EnvironmentSwitcherComponent />
 
             <LanguageSwitcherComponent />

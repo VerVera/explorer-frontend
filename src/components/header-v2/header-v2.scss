@@ -1,11 +1,8 @@
 @import '../../assets/styles/base/variables';
 
-// #HEADER-v2
+// #HEADER-V2
 //-------------------------------------
 $header-bg-color: #121212;
-$header-mobile-bg-color: #121212;
-$header-logo-color: #ffffff;
-$header-toggle-color: #ffffff;
 
 .bi-header-v2 {
   position: relative;
@@ -21,45 +18,9 @@ $header-toggle-color: #ffffff;
   }
 
   &__stats {
-    width: 100%;
+    padding: 0 ($grid-offset-step * 20) ($grid-offset-step * 12) ($grid-offset-step * 20);
 
     justify-content: center;
-  }
-
-  &__mobile {
-    display: none;
-  }
-
-  &__logo {
-    color: $header-logo-color;
-    font-family: $theme-main-font;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 0;
-    white-space: nowrap;
-    text-decoration: none;
-  }
-
-  &__logo-icon {
-    width: 160px;
-    height: 26px;
-
-    fill: $header-logo-color;
-
-    path {
-      fill: $header-logo-color;
-    }
-  }
-
-  &__toggle {
-    padding: $grid-offset-step * 2;
-  }
-
-  &__toggle-icon {
-    width: 24px;
-    height: 24px;
-
-    fill: $header-toggle-color;
   }
 }
 
@@ -67,6 +28,10 @@ $header-toggle-color: #ffffff;
   .bi-header-v2 {
     .bi-search {
       padding-right: $grid-offset-step * 5;
+    }
+
+    &__stats {
+      padding: 0 ($grid-offset-step * 6) ($grid-offset-step * 20) ($grid-offset-step * 6);
     }
   }
 }

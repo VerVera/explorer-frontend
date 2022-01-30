@@ -10,9 +10,6 @@ import { SearchComponent } from '../search/search.component';
 
 import './header-v2.scss';
 
-import { LogoIcon } from '../common/icons/common.icons';
-import { Link } from 'react-router-dom';
-
 class Header extends React.Component<SettingsActions> {
   constructor(props: SettingsActions) {
     super(props);
@@ -22,12 +19,6 @@ class Header extends React.Component<SettingsActions> {
     return (
       <div className="bi-header-v2 g-flex g-flex-column">
         <NavbarComponent />
-
-        <div className="bi-header-v2__mobile g-flex g-space-between g-flex-column__item-fixed">
-          <Link className="bi-navbar-v2__logo" to={'/'}>
-            <LogoIcon className="bi-sidebar__logo-icon" />
-          </Link>
-        </div>
 
         <div className="bi-header-v2__stats g-flex">
           <HeaderStatsV2Component />
