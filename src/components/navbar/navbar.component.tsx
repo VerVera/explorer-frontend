@@ -23,19 +23,23 @@ import { BurgerIcon, LogoIcon } from '../common/icons/common.icons';
 const NAVBAR_MENU_ITEMS: INavbarMenuItem[] = [
   {
     title: 'resources',
-    url:'',
-    children:[
+    url: '',
+    children: [
       {
-
         props: {
           isActive: (match: any, path: any) => {
-            return (match || path.pathname.match(/^(\/blocks\/|\/addresses\/|\/transactions\/)/)
-        );
+            return (
+              match ||
+              path.pathname.match(
+                /^(\/blocks\/|\/addresses\/|\/transactions\/)/
+              )
+            );
+          },
+        },
+        title: 'components.sidebar-menu.items.data',
+        url: '/',
       },
-    },
-    title: 'components.sidebar-menu.items.data',
-    url: '/',
-  }]
+    ],
   },
   {
     props: {
