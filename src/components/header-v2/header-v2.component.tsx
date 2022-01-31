@@ -6,7 +6,7 @@ import { SettingsActions } from '../../actions/settings.actions';
 
 import { HeaderStatsV2Component } from '../header-stats-v2/header-stats-v2.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { SearchComponent } from '../search/search.component';
+import { SearchV2Component } from '../search-v2/search-v2.component';
 
 import './header-v2.scss';
 
@@ -24,7 +24,7 @@ class Header extends React.Component<SettingsActions> {
           <HeaderStatsV2Component />
         </div>
 
-        <SearchComponent />
+        <SearchV2Component />
       </div>
     );
   }
