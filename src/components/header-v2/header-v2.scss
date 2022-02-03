@@ -18,7 +18,7 @@ $header-bg-color: #121212;
   }
 
   &__stats {
-    padding: 0 ($grid-offset-step * 20) ($grid-offset-step * 7) ($grid-offset-step * 20);
+    padding-bottom: ($grid-offset-step * 7);
 
     justify-content: center;
   }
@@ -27,7 +27,7 @@ $header-bg-color: #121212;
 @media screen and (max-width: $laptop-device-width) {
   .bi-header-v2 {
     &__stats {
-      padding: 0 ($grid-offset-step * 6) ($grid-offset-step * 7) ($grid-offset-step * 6);
+      padding-bottom: ($grid-offset-step * 7);
     }
   }
 }

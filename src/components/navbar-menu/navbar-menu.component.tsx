@@ -36,7 +36,7 @@ export interface INavbarMenuProps {
 export class NavbarMenuComponent extends React.Component<INavbarMenuProps> {
   render(): JSX.Element {
     return (
-      <nav className="bi-navbar-menu bi-navbar-menu--open">
+      <nav className="bi-navbar-menu">
         <ul className="bi-navbar-menu__wrapper g-flex">
           <li className="bi-nav-dropdown">
             <a className="bi-nav-dropdown__link g-flex" href="#">
