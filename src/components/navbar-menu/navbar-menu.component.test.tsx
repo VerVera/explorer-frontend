@@ -28,7 +28,6 @@ describe('Components | Navbar Menu', () => {
           url: 'bar',
         },
       ],
-      onClick: jest.fn(),
     };
   });
 

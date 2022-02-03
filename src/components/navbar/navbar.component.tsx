@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { NavHashLink } from 'react-router-hash-link';
 import { bindActionCreators } from 'redux';
 
 import { AppState } from '../../store/app.store';
@@ -9,7 +8,6 @@ import { AppState } from '../../store/app.store';
 import { SettingsActions } from '../../actions/settings.actions';
 import { SettingsState } from '../../reducers/settings.reducer';
 
-import { EnvironmentSwitcherComponent } from '../common/environment-switcher/environment-switcher.component';
 import { LanguageSwitcherComponent } from '../common/language-switcher/language-switcher.component';
 import {
   INavbarMenuItem,
@@ -134,8 +132,6 @@ class Navbar extends React.Component<INavbarProps, NavbarState> {
           <NavbarMenuComponent items={NAVBAR_MENU_ITEMS} />
 
           <div className="bi-navbar__switchers g-flex">
-            <EnvironmentSwitcherComponent />
-
             <LanguageSwitcherComponent />
           </div>
         </div>

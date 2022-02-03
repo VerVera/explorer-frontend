@@ -68,7 +68,7 @@ class Search extends React.PureComponent<
             onChange={this.onInputChangedDebounced}
             name="query"
             type="text"
-            placeholder="Block, Address, Transaction"
+            placeholder="Search for Block, Address, Transaction"
             onBlur={this.onInputBlur}
           />
 

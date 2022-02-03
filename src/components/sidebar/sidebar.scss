@@ -11,6 +11,7 @@ $sidebar-btn-toggle-border-color: #ffffff;
 $sidebar-btn-toggle-icon-color: #ffffff;
 
 .bi-sidebar {
+  display: none;
   position: relative;
   width: 300px;
   background-color: $sidebar-bg-color;
