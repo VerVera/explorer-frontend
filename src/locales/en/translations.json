@@ -98,7 +98,8 @@
       "marketCap": "Market Cap",
       "supply": "Circulating Supply",
       "transactionAverage": "Tx per Day",
-      "version": "Protocol"
+      "version": "Protocol",
+      "max-supply": "Max Supply"
     },
     "charts": {
       "view": "View Chart"

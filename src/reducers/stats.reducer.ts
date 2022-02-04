@@ -45,7 +45,7 @@ export function statsReducer(
         };
       });
       info.push({
-        title: 'max_supply',
+        title: 'max-supply',
         value: '97 739 924 ERG',
       });
 

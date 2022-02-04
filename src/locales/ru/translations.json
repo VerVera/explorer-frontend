@@ -78,7 +78,8 @@
       "marketCap": "Капитализация",
       "supply": "Монеты в Обращении",
       "transactionAverage": "Транзакций в День",
-      "version": "Версия"
+      "version": "Версия",
+      "max-supply": "Максимум монет"
     },
     "charts": {
       "view": "График"
