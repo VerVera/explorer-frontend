@@ -102,6 +102,23 @@
     },
     "charts": {
       "view": "View Chart"
+    },
+    "navigation": {
+      "resources": "Resources",
+      "latest-blocks": "Latest Blocks",
+      "mempool": "Mempool",
+      "oracle-pools": "Oracle Pools",
+      "statistics": "Statistics",
+      "charts": "Charts",
+      "stats": "Stats",
+      "tokens": "Tokens",
+      "issued-tokens": "Issued Tokens",
+      "rich-list": "Rich List",
+      "more": "More",
+      "wallets": "Wallets",
+      "api": "API",
+      "monitor": "Difficulty & Epoch monitor",
+      "ergo-watch": "Ergo Watch"
     }
   },
   "components": {
