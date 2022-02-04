@@ -9,86 +9,11 @@ import { SettingsActions } from '../../actions/settings.actions';
 import { SettingsState } from '../../reducers/settings.reducer';
 
 import { LanguageSwitcherComponent } from '../common/language-switcher/language-switcher.component';
-import {
-  INavbarMenuItem,
-  NavbarMenuComponent,
-} from '../navbar-menu/navbar-menu.component';
+import { NavbarMenuComponent } from '../navbar-menu/navbar-menu.component';
 
 import './navbar.scss';
 
 import { BurgerIcon, LogoIcon } from '../common/icons/common.icons';
-
-const NAVBAR_MENU_ITEMS: INavbarMenuItem[] = [
-  {
-    title: 'resources',
-    url: '',
-    children: [
-      {
-        props: {
-          isActive: (match: any, path: any) => {
-            return (
-              match ||
-              path.pathname.match(
-                /^(\/blocks\/|\/addresses\/|\/transactions\/)/
-              )
-            );
-          },
-        },
-        title: 'components.sidebar-menu.items.data',
-        url: '/',
-      },
-    ],
-  },
-  {
-    props: {
-      exact: false,
-    },
-    title: 'components.sidebar-menu.items.unconfirmed',
-    url: '/mempool',
-  },
-  {
-    props: {
-      exact: false,
-    },
-    title: 'components.sidebar-menu.items.issued-tokens',
-    url: '/issued-tokens',
-  },
-  {
-    props: {
-      exact: false,
-    },
-    title: 'Rich List',
-    url: '/rich-list',
-  },
-  {
-    props: {
-      exact: false,
-    },
-    title: 'components.sidebar-menu.items.oraclePools',
-    url: '/oracle-pools-list',
-  },
-  {
-    props: {
-      exact: false,
-    },
-    title: 'components.sidebar-menu.items.charts',
-    url: '/charts',
-  },
-  {
-    title: 'components.sidebar-menu.items.stats',
-    url: '/stats',
-  },
-  {
-    external: true,
-    title: 'components.sidebar-menu.items.api',
-    url: 'https://api.ergoplatform.com/api/v1/docs/',
-  },
-  {
-    external: true,
-    title: 'components.sidebar-menu.items.wallet',
-    url: 'https://ergoplatform.org/en/wallets/',
-  },
-];
 
 interface NavbarState {
   isClient: boolean;
@@ -129,7 +54,7 @@ class Navbar extends React.Component<INavbarProps, NavbarState> {
           <Link className="bi-navbar__logo" to={'/'}>
             <LogoIcon className="bi-navbar__logo-icon" />
           </Link>
-          <NavbarMenuComponent items={NAVBAR_MENU_ITEMS} />
+          <NavbarMenuComponent />
 
           <div className="bi-navbar__switchers g-flex">
             <LanguageSwitcherComponent />

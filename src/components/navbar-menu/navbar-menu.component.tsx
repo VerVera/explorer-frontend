@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLinkProps } from 'react-router-dom';
 import './navbar-menu.scss';
 import {
   ChevronDownIcon,
@@ -19,25 +18,31 @@ import {
 } from '../common/icons/common.icons';
 import { EnvironmentSwitcherComponent } from '../common/environment-switcher/environment-switcher.component';
 import { FormattedMessage } from 'react-intl';
+import { SettingsActions } from '../../actions/settings.actions';
+import { SettingsState } from '../../reducers/settings.reducer';
+import { AppState } from '../../store/app.store';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import classNames from 'classnames';
 
-export interface INavbarMenuItem {
-  props?: NavLinkProps | any;
-  icon?: JSX.Element;
-  children?: INavbarMenuItem[];
-  title: string;
-  url: string;
-  component?: any;
-  external?: boolean;
-}
+type INavbarMenuProps = SettingsActions & { settings: SettingsState };
 
-export interface INavbarMenuProps {
-  items: INavbarMenuItem[];
-}
-
-export class NavbarMenuComponent extends React.Component<INavbarMenuProps> {
+class NavbarMenu extends React.Component<INavbarMenuProps> {
+  constructor(props: INavbarMenuProps) {
+    super(props);
+    this.hideSidebar = this.hideSidebar.bind(this);
+  }
+  hideSidebar(): void {
+    this.props.setSidebarDisplayStatus(false);
+  }
   render(): JSX.Element {
+    const navClassNames = classNames({
+      'bi-navbar-menu': true,
+      'bi-navbar-menu--open': this.props.settings.isSidebarDisplayed,
+    });
+
     return (
-      <nav className="bi-navbar-menu">
+      <nav className={navClassNames}>
         <ul className="bi-navbar-menu__wrapper g-flex">
           <li className="bi-nav-dropdown">
             <a className="bi-nav-dropdown__link g-flex" href="#">
@@ -146,7 +151,10 @@ export class NavbarMenuComponent extends React.Component<INavbarMenuProps> {
         <div className="bi-navbar-menu__control">
           <EnvironmentSwitcherComponent />
 
-          <button className="bi-navbar-menu__btn-close bi-btn bi-btn--flat">
+          <button
+            className="bi-navbar-menu__btn-close bi-btn bi-btn--flat"
+            onClick={this.hideSidebar}
+          >
             <CloseIcon className="bi-navbar-menu__btn-close-icon" />
           </button>
         </div>
@@ -154,3 +162,18 @@ export class NavbarMenuComponent extends React.Component<INavbarMenuProps> {
     );
   }
 }
+
+function mapStateToProps(state: AppState): { settings: SettingsState } {
+  return { settings: state.settings };
+}
+
+function mapDispatchToProps(dispatch: any): any {
+  return bindActionCreators({ ...SettingsActions } as any, dispatch);
+}
+
+export const NavbarMenuComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+  null,
+  { pure: false }
+)(NavbarMenu);
