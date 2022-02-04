@@ -82,6 +82,23 @@
     },
     "charts": {
       "view": "График"
+    },
+    "navigation": {
+      "resources": "Ресурсы",
+      "latest-blocks": "Последние Блоки",
+      "mempool": "Mempool",
+      "oracle-pools": "Пулы Oracle",
+      "statistics": "Статистика",
+      "charts": "Графики",
+      "stats": "Статистика",
+      "tokens": "Токены",
+      "issued-tokens": "Выпущенные Токены",
+      "rich-list": "Rich List",
+      "more": "Больше",
+      "wallets": "Кошелек",
+      "api": "API",
+      "monitor": "Difficulty & Epoch monitor",
+      "ergo-watch": "Ergo Часы"
     }
   },
   "components": {
